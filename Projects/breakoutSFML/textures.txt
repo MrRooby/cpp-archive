@@ -1,0 +1,3 @@
+assets/paddle.png
+assets/ball.png
+assets/tab.png
