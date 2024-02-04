@@ -4,7 +4,9 @@
 
 void GAME::initWindow()
 {
-	this->window = new sf::RenderWindow( sf::VideoMode( 800, 600 ), "BREAKOUT", sf::Style::Close | sf::Style::Titlebar );
+	this->window = new sf::RenderWindow( sf::VideoMode( resW, resH ), "BREAKOUT", sf::Style::Close | sf::Style::Titlebar );
+	this->texture_window.loadFromFile("assets/background.png");
+	this->sprite_window.setTexture(this->texture_window);
 	this->window->setFramerateLimit( 60 );
 }
 
@@ -284,7 +286,7 @@ void GAME::update()
 	}
 
 
-	if( this->enemiesType.size() == 0 ) //reset po³o¿enia paletki i pi³ki w przypadku zakoñczenia gry
+	if( this->enemiesType.size() == 0 )
 	{
 		this->paddle->death();
 		this->ball->death();
@@ -296,10 +298,9 @@ void GAME::update()
 
 void GAME::render()
 {
-	this->window->clear(sf::Color::Blue);
+	this->window->draw(sprite_window);
 	
-	//rysowanie na ekran elementów gry
-	this->ui->render( *this->window, this->enemiesType.size(), this->list->getCurrentScore() ); //okno jest odniesieniem, musimy je od-odnosic :D
+	this->ui->render( *this->window, this->enemiesType.size(), this->list->getCurrentScore() );
 	
 	this->paddle->render( *this->window );
 	

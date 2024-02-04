@@ -14,16 +14,21 @@ class GAME
 {
 private:
 	
-	sf::RenderWindow* window;	// ³atwiej u¿ywaæ okna gdy jest pointer'em (zmiany itd.)
+	sf::RenderWindow* window;
 	sf::Clock clock;
 	sf::Time elapsed;
+	sf::Sprite sprite_window;
+	sf::Texture texture_window;
+
+	const int resW = 800;
+	const int resH = 600;
 	
 
 	bool isrunning = false;
 
-	bool DEV = false;			// Opcja pozwalaj¹ca wyœwietliæ hitbox'y elementów na ekranie (u¿yteczne przy debugowaniu)
+	bool DEV = false;
 	
-	bool ImGoingInsane = true;	// zabezpieczenie przed naliczaniem siê punktów w nieskoñczonoœæ
+	bool ImGoingInsane = true;
 	
 	bool LVL1 = true;
 	bool LVL2 = true;

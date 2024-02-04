@@ -6,7 +6,7 @@ List::List() : head( nullptr ) {}
 
 
 
-List::~List()				// konstruktor listy, inicjujemy j¹
+List::~List()
 {
 	while( head )
 	{
@@ -130,7 +130,7 @@ void UI::initText()
 	this->UItext.setFont( this->font );
 	this->UItext.setFillColor( sf::Color::White );
 	this->UItext.setCharacterSize( 20 );
-	this->UItext.setPosition( 5.f, 567.f );
+	this->UItext.setPosition( 5.f, 575.f );
 
 	this->ENDtext.setFont( this->font );
 	this->ENDtext.setFillColor( sf::Color::Red );

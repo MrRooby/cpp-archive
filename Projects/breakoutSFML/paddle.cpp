@@ -47,7 +47,6 @@ float Paddle::position()
 
 
 
-//FUNKCJE GRACZA
 void Paddle::update()
 {
 	
@@ -55,32 +54,23 @@ void Paddle::update()
 
 void Paddle::initTexture()
 {
-	//³adujemy texturê z pliku
 	this->texture_paddle.loadFromFile( "assets/paddle.png" );
 }
 
 
 void Paddle::initSprite()
 {
-	// Ustawiamy texturê dla spritea
 	this->sprite_paddle.setTexture( this->texture_paddle );
 
-	// Ustawienie wielkoœci i pozycji na ekranie sprite'a gracza
 	this->sprite_paddle.scale( paddleScale, paddleScale);
 	this->sprite_paddle.setPosition( 336.f, fixedHight );
 
-	// Ustawianie niewidzialnego Hitboxa gracza w celu ³atwego wykrycia kolizji
-	// Jest skalowany na wymiar textury gracza
-
-	// Hitbox:
 	float hitboxWIDTH = this->texture_paddle.getSize().x / 3;
 
-	// - Odbijaj¹cy na lewo
 	this->hitbox_paddle_LEFT.setSize( sf::Vector2f( ( this->texture_paddle.getSize().x * paddleScale ) / 2, ( this->texture_paddle.getSize().y * paddleScale ) / 4 ) );
 	this->hitbox_paddle_LEFT.setPosition( 336.f, fixedHight);
 	this->hitbox_paddle_LEFT.setFillColor( sf::Color::Green );
 
-	// - Odbijaj¹cy na prawo
 	this->hitbox_paddle_RIGHT.setSize( sf::Vector2f( ( this->texture_paddle.getSize().x * paddleScale ) / 2, ( this->texture_paddle.getSize().y * paddleScale ) / 4 ) );
 	this->hitbox_paddle_RIGHT.setPosition( 400.f, fixedHight );
 	this->hitbox_paddle_RIGHT.setFillColor( sf::Color::Yellow );

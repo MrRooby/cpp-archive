@@ -12,8 +12,8 @@ private:
 	
 	const float ball_scale = 4.f;
 
-	const float start_y = 470.f;		// sta³e zmienne wyjœciowej pozycji pi³ki
-	const float start_x = 385.f;		//
+	const float start_y = 470.f;
+	const float start_x = 385.f;
 
 	void initTexture();
 	void initSprite();
@@ -24,15 +24,15 @@ public:
 	~Ball();
 
 	bool devMODE    = false;
-	bool ballin     = false;			// zmienna jest u¿ywana przy resecie pozycji w wyniku œmierci
-	bool noCheating = false;			// zmienna zapobiega resetowaniu pozycji pi³ki za ka¿dym naciœniêciem spacji
+	bool ballin     = false;
+	bool noCheating = false;
 
-	int moveSpeed = 4;
+	int moveSpeed = 3;
 
-	float xV = 1.f;						// zmienne u¿ywane do okreœlenia kierunku poruszania siê pi³ki
-	float yV = -1.f;					// wyjœciowo tak jak w oryginale pi³ka porusza siê w prawy, górny róg
+	float xV = 1.f;
+	float yV = -1.f;
 
-	int HP = 3;
+	int HP = 4;
 	 
 	const sf::CircleShape getHitbox() const;
 

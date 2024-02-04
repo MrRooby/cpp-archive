@@ -36,9 +36,9 @@ public:
 
 	float getScore();
 
-	void insert( float newScore );					// wpisywanie wyniku do listy
+	void insert( float newScore );
 
-	void saveList( const std::string& fileName );	// zapisywanie wyników do pliku
+	void saveList( const std::string& fileName );
 
 };
 
